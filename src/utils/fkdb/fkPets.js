@@ -1,5 +1,4 @@
-// import img1 from '../../assets/carousel/@480p__bird2.jpg'
-// import { CAROUSEL_IMG_1, CAROUSEL_IMG_2 } from '../configs'
+import { BASE_URL } from "../configs";
 
 export const pets = [
   {
@@ -9,7 +8,7 @@ export const pets = [
     gender: 'male',
     age: '0.5yo',
     rescue_date: '2023-05-07',
-    image: 'src/assets/carousel/@480p__Alfredo.jpg',
+    image: `${BASE_URL}/imgs/carousel/@480p__Alfredo.jpg`,
     galery: [
       'https://cdn.pixabay.com/photo/2016/03/28/10/05/kitten-1285341_640.jpg',
       'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
@@ -29,7 +28,7 @@ export const pets = [
     gender: 'male',
     age: 'unknown',
     rescue_date: '2022-01-17',
-    image: 'src/assets/carousel/@480p__bird2.jpg',
+    image: `${BASE_URL}/imgs/carousel/@480p__bird2.jpg`,
     galery: [
       'https://images.pexels.com/photos/4430026/pexels-photo-4430026.jpeg?auto=compress&cs=tinysrgb&w=600',
       'https://images.pexels.com/photos/6398824/pexels-photo-6398824.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -46,7 +45,7 @@ export const pets = [
     gender: 'female',
     age: '2.5yo',
     rescue_date: '2022-10-22',
-    image: 'src/assets/carousel/@480p__batman.jpg',
+    image: `${BASE_URL}/imgs/carousel/@480p__batman.jpg`,
     galery: [
       'https://images.pexels.com/photos/10201413/pexels-photo-10201413.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
       'https://images.pexels.com/photos/260600/pexels-photo-260600.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
@@ -63,8 +62,9 @@ export const pets = [
     gender: 'male',
     age: 'unknown',
     rescue_date: '2023-05-22',
-    image: 'src/assets/carousel/@480p_fisher.jpg',
+    image: `${BASE_URL}/imgs/carousel/@480p__fisher.jpg`,
     galery: [
+      `${BASE_URL}/imgs/carousel/@480p_fisher2.jpg`,
       'https://images.pexels.com/photos/7186210/pexels-photo-7186210.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
     ],
     vaccins: []
@@ -76,7 +76,7 @@ export const pets = [
     gender: 'male',
     age: '3yo',
     rescue_date: '2020-12-20',
-    image: 'src/assets/carousel/@480p_mr-speedy.jpg',
+    image: `${BASE_URL}/imgs/carousel/@480p_mr-speedy.jpg`,
     galery: [
       'https://images.pexels.com/photos/914794/pexels-photo-914794.jpeg?auto=compress&cs=tinysrgb&w=600',
       'https://images.pexels.com/photos/2253789/pexels-photo-2253789.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -91,7 +91,7 @@ export const pets = [
     gender: 'female',
     age: '1.2yo',
     rescue_date: '2022-04-03',
-    image: 'src/assets/carousel/@480p__larinha.jpg',
+    image: `${BASE_URL}/imgs/carousel/@480p__larinha.jpg`,
     galery: [
       'https://images.pexels.com/photos/3250454/pexels-photo-3250454.jpeg?auto=compress&cs=tinysrgb&w=600',
       'https://images.pexels.com/photos/2226006/pexels-photo-2226006.jpeg?auto=compress&cs=tinysrgb&w=600',

@@ -16,7 +16,7 @@ export default function CardList(props) {
 
 CardList.propTypes = {
   petList: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     nick: PropTypes.string,
     image: PropTypes.string,
     rescue_date: PropTypes.string,
