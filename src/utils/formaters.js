@@ -16,8 +16,6 @@ export const formatAge = (age) => {
   return `${years} ano(s) e ${lastDigit.toFixed(0)} mes(es)`;
 };
 
-formatAge('2.5yo');
-
 export const formatCategory = (cat) => {
   switch (cat) {
     case 'cat':
