@@ -20,5 +20,5 @@ CardList.propTypes = {
     nick: PropTypes.string,
     image: PropTypes.string,
     rescue_date: PropTypes.string,
-  }))
+  })).isRequired,
 }
