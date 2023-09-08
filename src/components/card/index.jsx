@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { calculatePetcoins } from '../../utils/petCoins';
 
 export default function PetCard(props) {
   const { image, nick, rescue_date, } = props;
@@ -8,7 +9,7 @@ export default function PetCard(props) {
       <h3>{ nick }</h3>
       <span>
         <p>Resgatado em: { rescue_date }</p>
-        <p>PetCoins: { 10 }</p>
+        <p>PetCoins: { calculatePetcoins(rescue_date) }</p>
       </span>
     </>
   );
