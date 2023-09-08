@@ -7,7 +7,13 @@ export const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
 `;
