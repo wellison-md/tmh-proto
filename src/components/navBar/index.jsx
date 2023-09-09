@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import { ListItem, NavBarWrapper } from "./navBarStyle";
 
 export default function NavBar() {
   return (
     <NavBarWrapper>
-      <ListItem>Início</ListItem>
-      <ListItem>Pets</ListItem>
-      <ListItem>Serviços</ListItem>
-      <ListItem>Contato</ListItem>
+      <ListItem><Link to='/' >Início</Link></ListItem>
+      <ListItem><Link to='/pets' >Pets</Link></ListItem>
+      <ListItem><Link to='/contato' >Contato</Link></ListItem>
+      <ListItem><Link to='/login' >Login</Link></ListItem>
     </NavBarWrapper>
   );
 }
