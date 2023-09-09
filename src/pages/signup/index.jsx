@@ -1,21 +1,31 @@
 import { useState } from "react";
 import NavBar from "../../components/navBar";
-import { Link } from "react-router-dom";
 
-export default function Login() {
+export default function SignUp() {
+  const [usrname, setUsrname] = useState('');
   const [email, setEmail] = useState('');
   const [pswd, setPswd] = useState('');
 
-  const isActive = email.length > 6 && pswd.length >= 6
+  const isActive = usrname.length >= 3
+    && email.length > 6
+    && pswd.length >= 6
 
   return (
     <>
-      <h1>Login</h1>
+      <h1>Sign up</h1>
       <NavBar />
       <form onSubmit={ (e) => e.preventDefault() }>
         <input
+          type='text'
+          placeholder='Digite seu nome'
+          onChange={ (e) => setUsrname(e.target.value) }
+          value={ usrname }
+          required
+        />
+
+        <input
           type='email'
-          placeholder='Digite seu email'
+          placeholder='Digite o seu melhor email'
           onChange={ (e) => setEmail(e.target.value) }
           value={ email }
           required
@@ -23,7 +33,7 @@ export default function Login() {
 
         <input
           type='password'
-          placeholder='Digite sua senha'
+          placeholder='Digite sua senha de acesso'
           onChange={ (e) => setPswd(e.target.value) }
           value={ pswd }
           required
@@ -32,12 +42,10 @@ export default function Login() {
         <button
           type='button'
           disabled={ !isActive }
-        >Login</button>
-
+        >
+          Cadastrar
+        </button>
       </form>
-
-      <br /><hr></hr>
-      <p>Ainda não tem uma conta? <Link to='/signup'><button>Registre agora</button></Link></p>
     </>
   );
 }
