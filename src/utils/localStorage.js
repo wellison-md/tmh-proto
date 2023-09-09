@@ -5,3 +5,10 @@ export const saveOnStorage = (key, payload) => {
 export const getFromStorage = (key) => {
   return JSON.parse(localStorage.getItem(key)) || [];
 };
+
+export const checkInitialStorage = (key, payload) => {
+  if (localStorage.getItem(key) === null) {
+    saveOnStorage(key, payload);
+  }
+  return;
+};

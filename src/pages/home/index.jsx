@@ -5,10 +5,10 @@ import CardList from "../../components/cardList";
 import DonateWidget from "../../components/donateWidget";
 import EventList from "../../components/eventList";
 import Footer from "../../components/footer";
-import { saveOnStorage } from "../../utils/localStorage";
+import { checkInitialStorage } from "../../utils/localStorage";
 import { users } from "../../utils/fkdb/fkUsers";
 
-saveOnStorage('tmh-users', users);
+checkInitialStorage('tmh-users', users);
 
 export default function Home() {
   const [pets, setPets] = useState([]);

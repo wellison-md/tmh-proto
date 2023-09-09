@@ -13,7 +13,6 @@ export default function Login() {
   const isActive = email.length > 6 && pswd.length >= 6
 
   const checkLogin = async (email, pswd) => {
-    setErrorMsg('');
     const req = await makeLogin(email, pswd);
 
     if (req.status === 'success') {
@@ -22,8 +21,6 @@ export default function Login() {
 
     setTryLogin(true);
     setErrorMsg(req.payload);
-    setEmail('');
-    setPswd('');
   };
 
   return (
@@ -61,7 +58,7 @@ export default function Login() {
       </form>
 
       <br /><hr></hr>
-      <p>Ainda não tem uma conta? <Link to='/signup'><button>Registre agora</button></Link></p>
+      <p>Ainda não tem uma conta? <Link to='/signup'><button>Registre-se agora</button></Link></p>
     </>
   );
 }

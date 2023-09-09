@@ -19,7 +19,8 @@ export default function SignUp() {
     const users = getFromStorage('tmh-users');
     const emailAlreadyExist = getByProps(users, 'email', email);
 
-    if (emailAlreadyExist) {
+    console.log({ users, emailAlreadyExist })
+    if (emailAlreadyExist.email) {
       return setStatus('Este email não está disponível');
     }
 
@@ -33,7 +34,6 @@ export default function SignUp() {
 
     users.push(newUser);
     saveOnStorage('tmh-users', users);
-    setStatus('');
   };
 
   return (
