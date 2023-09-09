@@ -20,7 +20,7 @@ export default function SignUp() {
     const emailAlreadyExist = getByProps(users, 'email', email);
 
     if (emailAlreadyExist) {
-      setStatus('Este email não está disponível');
+      return setStatus('Este email não está disponível');
     }
 
     const newUser = {
@@ -73,9 +73,7 @@ export default function SignUp() {
           Cadastrar
         </button>
 
-        {
-          status
-        }
+        { status }
       </form>
     </>
   );

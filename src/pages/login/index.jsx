@@ -22,14 +22,17 @@ export default function Login() {
 
     setTryLogin(true);
     setErrorMsg(req.payload);
+    setEmail('');
+    setPswd('');
   };
 
   return (
     <>
       <h1>Login</h1>
       <NavBar />
-      <form onSubmit={ (e) => e.preventDefault() }>
+      <form id='form-login' onSubmit={ (e) => e.preventDefault() }>
         <input
+          id='email-input'
           type='email'
           placeholder='Digite seu email'
           onChange={ (e) => setEmail(e.target.value) }
@@ -38,6 +41,7 @@ export default function Login() {
         />
 
         <input
+          id='password-input'
           type='password'
           placeholder='Digite sua senha'
           onChange={ (e) => setPswd(e.target.value) }
