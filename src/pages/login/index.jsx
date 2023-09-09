@@ -13,6 +13,7 @@ export default function Login() {
   const isActive = email.length > 6 && pswd.length >= 6
 
   const checkLogin = async (email, pswd) => {
+    setErrorMsg('');
     const req = await makeLogin(email, pswd);
 
     if (req.status === 'success') {
