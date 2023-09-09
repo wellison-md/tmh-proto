@@ -4,16 +4,23 @@ import NavBar from "../../components/navBar";
 import CardList from "../../components/cardList";
 import DonateWidget from "../../components/donateWidget";
 import EventList from "../../components/eventList";
-import { EVENT_LIST } from "../../utils/configs";
 import Footer from "../../components/footer";
+import { saveOnStorage } from "../../utils/localStorage";
+import { users } from "../../utils/fkdb/fkUsers";
+
+saveOnStorage('tmh-users', users);
 
 export default function Home() {
-  const [data, setData] = useState([]);
+  const [pets, setPets] = useState([]);
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     (async () => {
       const petList = await getFake('pets');
-      setData(petList)
+      const eventList = await getFake('events');
+
+      setPets(petList);
+      setEvents(eventList);
     })()
   }, []);
 
@@ -21,9 +28,9 @@ export default function Home() {
     <>
       <h1>Home</h1>
       <NavBar />
-      <CardList petList={ data } />
+      <CardList petList={ pets } />
       <DonateWidget />
-      <EventList eventList={ EVENT_LIST } />
+      <EventList eventList={ events } />
       <Footer />
     </>
   );
