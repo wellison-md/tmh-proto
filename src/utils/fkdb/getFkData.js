@@ -1,3 +1,4 @@
+import { EVENT_LIST } from "../configs";
 import { cities } from "./fkCities";
 import { pets } from "./fkPets";
 import { users } from "./fkUsers";
@@ -17,6 +18,9 @@ export const getFake = (data) => {
         case 'pets':
           resolve(pets);
           break;
+        case 'events':
+          resolve(EVENT_LIST);
+          break;
         default:
           reject('Something went wrong');
       }
@@ -24,4 +28,9 @@ export const getFake = (data) => {
   });
 
   return response;
+};
+
+export const getByProps = (list, prop, target) => {
+  const result = list.find((item) => item[prop] === target);
+  return result || [];
 };
