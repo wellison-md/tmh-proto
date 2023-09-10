@@ -6,7 +6,7 @@ export default function NavBar() {
     <NavBarWrapper>
       <ListItem><Link to='/' >Início</Link></ListItem>
       <ListItem><Link to='/pets' >Pets</Link></ListItem>
-      <ListItem><Link to='/contato' >Contato</Link></ListItem>
+      <ListItem><Link to='/contact' >Contato</Link></ListItem>
       <ListItem><Link to='/login' >Login</Link></ListItem>
     </NavBarWrapper>
   );

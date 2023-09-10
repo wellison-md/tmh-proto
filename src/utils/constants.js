@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:5173';
+export const BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:5173';
 export const CEILING_PETCOINS = 11250;
 export const EVENT_LIST = [
   `${BASE_URL}/imgs/eventBanners/event1.jpg`,

@@ -2,7 +2,7 @@ import { useState } from "react";
 import NavBar from "../../components/navBar";
 import { getFromStorage, saveOnStorage } from "../../utils/localStorage";
 import { getByProps } from "../../utils/fkdb/getFkData";
-import { USER_TEMPLATE } from '../../utils/configs';
+import { USER_TEMPLATE } from '../../utils/constants';
 import { hash } from "bcryptjs";
 
 export default function SignUp() {

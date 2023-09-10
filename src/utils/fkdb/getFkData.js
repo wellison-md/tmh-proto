@@ -1,4 +1,4 @@
-import { EVENT_LIST } from "../configs";
+import { EVENT_LIST } from "../constants";
 import { cities } from "./fkCities";
 import { pets } from "./fkPets";
 import { users } from "./fkUsers";
