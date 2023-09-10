@@ -1,5 +1,6 @@
 import { useState } from "react";
 import NavBar from "../../components/navBar";
+import { sendWappMsg } from "../../utils/contact";
 
 export default function Contact() {
   const [contactName, setContactName] = useState('');
@@ -35,7 +36,7 @@ export default function Contact() {
 
         <textarea
           id='contact-subject'
-          placeholder='Sobre o que você quer conversar?'
+          placeholder='Sobre o que você quer conversar? (mensagem mínima de 30 caracteres)'
           onChange={ (e) => setSubject(e.target.value) }
           maxLength='500'
           value={ subject }
@@ -45,6 +46,7 @@ export default function Contact() {
 
         <button
           disabled={ !validInputs }
+          onClick={ () => sendWappMsg(subject, contactName, email) }
         >Enviar email</button>
       </form>
     </>
