@@ -4,6 +4,7 @@ import NotFound from "./pages/notFound";
 import PetProfile from "./components/petProfile";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
+import Contact from "./pages/contact";
 
 export default function Router() {
   return (
@@ -12,6 +13,7 @@ export default function Router() {
         <Route path="/" element={ <Home /> } />
         <Route path="/login" element={ <Login /> } />
         <Route path="/signup" element={ <SignUp /> } />
+        <Route path="/contact" element={ <Contact /> } />
         <Route path="/pet-profile/:id" element={  <PetProfile /> } />
         <Route path="*" element={  <NotFound /> } />
       </Routes>
