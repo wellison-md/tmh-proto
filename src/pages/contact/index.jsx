@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../../components/header";
 import { sendWappMsg } from "../../utils/contact";
 import Footer from "../../components/footer";
+import { ContactForm } from "./contactStyle";
 
 export default function Contact() {
   const [contactName, setContactName] = useState('');
@@ -15,7 +16,7 @@ export default function Contact() {
   return (
     <>
       <Header />
-      <form onSubmit={ (e) => e.preventDefault() }>
+      <ContactForm onSubmit={ (e) => e.preventDefault() }>
         <input
           id='contact-name'
           type='text'
@@ -48,7 +49,7 @@ export default function Contact() {
           disabled={ !validInputs }
           onClick={ () => sendWappMsg(subject, contactName, email) }
         >Enviar email</button>
-      </form>
+      </ContactForm>
       <Footer />
     </>
   );
