@@ -1,16 +1,22 @@
 import PropTypes from 'prop-types';
 import PetCard from '../card';
+import { CardListLabel, CardListWrapper, Wrapper } from './cardListStyle';
+import { BiSolidZap } from 'react-icons/bi';
 
 export default function CardList(props) {
   const { petList } = props;
+
   return (
-    <>
-      {
-        petList.length === 0
-          ? 'loading...'
-          : petList.map((item) => <PetCard key={ item.id } { ...item } />)
-      }
-    </>
+    <Wrapper>
+      <CardListLabel><BiSolidZap /> Resgatados recentemente</CardListLabel>
+      <CardListWrapper>
+        {
+          petList.length === 0
+            ? 'loading...'
+            : petList.map((item) => <PetCard key={ item.id } { ...item } />)
+        }
+      </CardListWrapper>
+    </Wrapper>
   );
 }
 
