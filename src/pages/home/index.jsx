@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { getFake } from "../../utils/fkdb/getFkData";
-import NavBar from "../../components/navBar";
 import CardList from "../../components/cardList";
 import DonateWidget from "../../components/donateWidget";
 import EventList from "../../components/eventList";
 import Footer from "../../components/footer";
 import { checkInitialStorage } from "../../utils/localStorage";
 import { users } from "../../utils/fkdb/fkUsers";
+import Header from "../../components/header";
 
 checkInitialStorage('tmh-users', users);
 
@@ -26,8 +26,7 @@ export default function Home() {
 
   return (
     <>
-      <h1>Home</h1>
-      <NavBar />
+      <Header />
       <CardList petList={ pets } />
       <DonateWidget />
       <EventList eventList={ events } />
