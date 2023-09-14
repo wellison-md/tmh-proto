@@ -1,9 +1,10 @@
 import { useState } from "react";
-import NavBar from "../../components/navBar";
 import { getFromStorage, saveOnStorage } from "../../utils/localStorage";
 import { getByProps } from "../../utils/fkdb/getFkData";
 import { USER_TEMPLATE } from '../../utils/constants';
 import { hash } from "bcryptjs";
+import Footer from "../../components/footer";
+import Header from "../../components/header";
 
 export default function SignUp() {
   const [usrname, setUsrname] = useState('');
@@ -38,8 +39,7 @@ export default function SignUp() {
 
   return (
     <>
-      <h1>Sign up</h1>
-      <NavBar />
+      <Header />
       <form onSubmit={ (e) => e.preventDefault() }>
         <input
           type='text'
@@ -75,6 +75,7 @@ export default function SignUp() {
 
         { status }
       </form>
+      <Footer />
     </>
   );
 }

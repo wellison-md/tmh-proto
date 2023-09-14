@@ -1,8 +1,9 @@
 import { useState } from "react";
-import NavBar from "../../components/navBar";
 import { Link } from "react-router-dom";
 import { makeLogin } from "../../utils/login";
 import { saveOnStorage } from "../../utils/localStorage";
+import Header from "../../components/header";
+import Footer from '../../components/footer';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -25,8 +26,7 @@ export default function Login() {
 
   return (
     <>
-      <h1>Login</h1>
-      <NavBar />
+      <Header />
       <form id='form-login' onSubmit={ (e) => e.preventDefault() }>
         <input
           id='email-input'
@@ -59,6 +59,7 @@ export default function Login() {
 
       <br /><hr></hr>
       <p>Ainda não tem uma conta? <Link to='/signup'><button>Registre-se agora</button></Link></p>
+      <Footer />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import NavBar from "../../components/navBar";
+import Header from "../../components/header";
 import { sendWappMsg } from "../../utils/contact";
+import Footer from "../../components/footer";
 
 export default function Contact() {
   const [contactName, setContactName] = useState('');
@@ -13,8 +14,7 @@ export default function Contact() {
 
   return (
     <>
-      <h1>Contato</h1>
-      <NavBar />
+      <Header />
       <form onSubmit={ (e) => e.preventDefault() }>
         <input
           id='contact-name'
@@ -49,6 +49,7 @@ export default function Contact() {
           onClick={ () => sendWappMsg(subject, contactName, email) }
         >Enviar email</button>
       </form>
+      <Footer />
     </>
   );
 }
