@@ -1,14 +1,18 @@
 import { styled } from 'styled-components';
 
 export const NavBarWrapper = styled.ul`
-  width: 100%;
-  height: 80px;
-  list-style: none;
+  background-color: #8500d3;
+  color: white;
   display: flex;
+  height: 80px;
+  justify-content: center;
+  list-style: none;
+  width: 100%;
 `;
 
 export const ListItem = styled.li`
-  margin: 0 16px;
-  cursor: pointer;
   align-self: center;
+  cursor: pointer;
+  margin: 0 16px;
+  transition: 0.3s linear;
 `;
