@@ -1,15 +1,17 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { makeLogin } from "../../utils/login";
 import { saveOnStorage } from "../../utils/localStorage";
 import Header from "../../components/header";
 import Footer from '../../components/footer';
+import { LoginForm, SignSection, Wrapper } from "./loginStyle";
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [pswd, setPswd] = useState('');
   const [tryLogin, setTryLogin] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const navigate = useNavigate();
 
   const isActive = email.length > 6 && pswd.length >= 6
 
@@ -25,9 +27,9 @@ export default function Login() {
   };
 
   return (
-    <>
+    <Wrapper>
       <Header />
-      <form id='form-login' onSubmit={ (e) => e.preventDefault() }>
+      <LoginForm id='form-login' onSubmit={ (e) => e.preventDefault() }>
         <input
           id='email-input'
           type='email'
@@ -55,11 +57,15 @@ export default function Login() {
         {
           tryLogin && <p>{ errorMsg }</p>
         }
-      </form>
+      </LoginForm>
 
-      <br /><hr></hr>
-      <p>Ainda não tem uma conta? <Link to='/signup'><button>Registre-se agora</button></Link></p>
+      <SignSection>
+        <hr />
+        <p>Ainda não tem uma conta?</p>
+        <button onClick={ () => navigate('/signup') }>Registre agora</button>
+      </SignSection>
+
       <Footer />
-    </>
+    </Wrapper>
   );
 }
