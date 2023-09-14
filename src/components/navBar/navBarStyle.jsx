@@ -4,7 +4,7 @@ export const NavBarWrapper = styled.ul`
   background-color: #8500d3;
   color: white;
   display: flex;
-  height: 80px;
+  height: 40px;
   justify-content: center;
   list-style: none;
   width: 100%;
