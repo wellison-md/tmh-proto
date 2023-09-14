@@ -5,6 +5,7 @@ import { USER_TEMPLATE } from '../../utils/constants';
 import { hash } from "bcryptjs";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
+import { SignupForm } from "./signupStyle";
 
 export default function SignUp() {
   const [usrname, setUsrname] = useState('');
@@ -40,7 +41,7 @@ export default function SignUp() {
   return (
     <>
       <Header />
-      <form onSubmit={ (e) => e.preventDefault() }>
+      <SignupForm onSubmit={ (e) => e.preventDefault() }>
         <input
           type='text'
           placeholder='Digite seu nome'
@@ -74,7 +75,7 @@ export default function SignUp() {
         </button>
 
         { status }
-      </form>
+      </SignupForm>
       <Footer />
     </>
   );
