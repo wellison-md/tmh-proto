@@ -1,15 +1,17 @@
 import { useContext, useEffect, useState } from "react";
-import Footer from "../../components/footer";
-import Header from "../../components/header";
 import { getFromStorage } from "../../utils/localStorage";
 import { makeLogout } from "../../utils/login";
+import { useNavigate } from "react-router-dom";
+import { LogoutBtn, UserAvatar, UserCoins, UserLabel, Wrapper } from "./userProfileStyle";
+import { RiCoinsLine } from 'react-icons/ri'
+import Footer from "../../components/footer";
+import Header from "../../components/header";
 import Store from "../../context/store";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
 
 export default function UserProfile() {
-  const [currentUser, setCurrentUser] = useState({});
   const { setLoggedUser } = useContext(Store);
+  const [currentUser, setCurrentUser] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,10 +34,16 @@ export default function UserProfile() {
   return (
     <>
       <Header />
-      <img src={ currentUser.avatar } alt='imagem do usuário' />
-      <h2>Olá, { currentUser.usrname }</h2>
-      <p>Petcoins { currentUser.petCoins }</p>
-      <button onClick={ () => logout() } >Sair</button>
+      <Wrapper>
+        <UserAvatar src={ currentUser.avatar } alt='imagem do usuário' />
+        <UserLabel>Olá, { currentUser.usrname }</UserLabel>
+        <UserCoins><RiCoinsLine /> petcoins: { currentUser.petCoins }</UserCoins>
+        <h3>Pet favoritos</h3>
+        {
+          currentUser?.pets?.map((pet, i) => <p key={ i }>{ pet }</p>)
+        }
+        <LogoutBtn onClick={ () => logout() } >Sair</LogoutBtn>
+      </Wrapper>
       <Footer />
     </>
   );
