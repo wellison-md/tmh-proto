@@ -2,9 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { makeLogin } from "../../utils/login";
 import { saveOnStorage } from "../../utils/localStorage";
+import { LoginForm, SignSection, Wrapper } from "./loginStyle";
+import Swal from "sweetalert2";
 import Header from "../../components/header";
 import Footer from '../../components/footer';
-import { LoginForm, SignSection, Wrapper } from "./loginStyle";
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -19,7 +20,15 @@ export default function Login() {
     const req = await makeLogin(email, pswd);
 
     if (req.status === 'success') {
-      return saveOnStorage('tmh-logged-user', req.payload);
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: `Bem vindo ${req.payload.usrname}`,
+        showConfirmButton: false,
+        timer: 1200
+      })
+      saveOnStorage('tmh-logged-user', req.payload);
+      return navigate('/');
     }
 
     setTryLogin(true);
