@@ -12,3 +12,10 @@ export const checkInitialStorage = (key, payload) => {
   }
   return;
 };
+
+export const checkLoggedUser = () => {
+  if (localStorage.getItem('tmh-logged-user') === null) {
+    return false;
+  }
+  return true;
+}
