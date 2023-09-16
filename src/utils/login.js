@@ -13,3 +13,7 @@ export const makeLogin = async (email, pswd) => {
 
   return { status: 'fail', payload: 'Email ou senha incorretos. Tente novamente' };
 };
+
+export const makeLogout = () => {
+  localStorage.removeItem('tmh-logged-user');
+};
