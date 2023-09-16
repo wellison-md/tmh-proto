@@ -1,13 +1,15 @@
+import { Balance, Comand, ComandBtn, DonateBtn, DonateLabel, Wrapper } from "./donateStyle";
+
 export default function DonateWidget() {
   return (
-    <div>
-      <h2>Ajude-nos com uma doação</h2>
-      <span>
-        <button>-</button>
-        <input type="number" min='5' step='5' disabled />
-        <button>+</button>
-      </span>
-      <button>Doar</button>
-    </div>
+    <Wrapper>
+      <DonateLabel>Ajude-nos com uma doação</DonateLabel>
+      <Comand>
+        <ComandBtn>-</ComandBtn>
+        <Balance>{ '0.00' }</Balance>
+        <ComandBtn>+</ComandBtn>
+      </Comand>
+      <DonateBtn>Doar</DonateBtn>
+    </Wrapper>
   );
 }
