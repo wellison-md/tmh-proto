@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { makeLogin } from "../../utils/login";
 import { saveOnStorage } from "../../utils/localStorage";
@@ -6,12 +6,14 @@ import { LoginForm, SignSection, Wrapper } from "./loginStyle";
 import Swal from "sweetalert2";
 import Header from "../../components/header";
 import Footer from '../../components/footer';
+import Store from "../../context/store";
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [pswd, setPswd] = useState('');
   const [tryLogin, setTryLogin] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const { setLoggedUser } = useContext(Store);
   const navigate = useNavigate();
 
   const isActive = email.length > 6 && pswd.length >= 6
@@ -28,6 +30,7 @@ export default function Login() {
         timer: 1200
       })
       saveOnStorage('tmh-logged-user', req.payload);
+      setLoggedUser(true);
       return navigate('/');
     }
 
