@@ -3,17 +3,20 @@ import styled from "styled-components";
 export const CardWrapper = styled.div`
   align-items: center;
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 5px #888;
+  border: 1px solid lightgray;
+  border-radius: 0 0 12px 12px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 500px;
   margin: 12px;
   max-width: 250px;
-  padding: 8px;
   transition: .3s;
   width: 250px;
+
+  &:hover{
+    box-shadow: 0 3px 5px lightgray;
+    transform: scale(1.02);
+  }
 
   & img {
     height: 100%;
@@ -29,5 +32,6 @@ export const CardWrapper = styled.div`
 
   & p {
     font-size: 13px;
+    padding-bottom: 12px;
   }
 `;
