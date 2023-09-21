@@ -4,27 +4,34 @@ export const SignupForm = styled.form`
   display: flex;
   flex-direction: column;
   margin-left: calc((100% - 450px) / 2);
-  padding: 36px 0;
+  padding: ${ ({ theme }) => theme.sizes.m } 0;
 
   input {
-    border-radius: 8px;
     border: 1px solid lightgray;
-    margin-top: 12px;
-    max-width: 450px;
-    padding: 12px;
+    border-radius: ${ ({ theme }) => theme.sizes.xs };
+    margin-top: ${ ({ theme }) => theme.sizes.s };
+    max-width: ${ ({ theme }) => parseInt(theme.sizes.m) * 10}px;
+    padding: ${ ({ theme }) => theme.sizes.s };
   }
 
   button {
-    background-color: #8500d3;
-    border:none;
-    border-radius: 8px;
+    background-color: ${ ({ theme }) => theme.colors.primary };
+    border: none;
+    border-radius: ${ ({ theme }) => theme.sizes.xs };
     color: white;
-    margin-bottom: 48px;
-    margin-top: 36px;
-    max-width: 450px;
-    padding: 12px;
+    margin-bottom: ${ ({ theme }) => theme.sizes.l };
+    margin-top: ${ ({ theme }) => theme.sizes.l };
+    max-width: ${ ({ theme }) => parseInt(theme.sizes.m) * 10}px;
+    padding: ${ ({ theme }) => theme.sizes.s };
   }
   button:disabled {
     opacity: 0.3;
   }
+`;
+
+export const LabelAlert = styled.p`
+  background-color: rgba(255, 0, 0, 0.5);
+  padding: ${ ({ theme }) => theme.sizes.xs };
+  color: white;
+  max-width: ${ ({ theme }) => parseInt(theme.sizes.m) * 10}px;
 `;
