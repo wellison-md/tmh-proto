@@ -2,10 +2,11 @@ import { useState } from "react";
 import { getFromStorage, saveOnStorage } from "../../utils/localStorage";
 import { getByProps } from "../../utils/fkdb/getFkData";
 import { USER_TEMPLATE } from '../../utils/constants';
+import { LabelAlert, SignupForm } from "./signupStyle";
 import { hash } from "bcryptjs";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
-import { SignupForm } from "./signupStyle";
+import Swal from "sweetalert2";
 
 export default function SignUp() {
   const [usrname, setUsrname] = useState('');
@@ -23,6 +24,14 @@ export default function SignUp() {
 
     console.log({ users, emailAlreadyExist })
     if (emailAlreadyExist.email) {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Este email não está disponível',
+        showConfirmButton: false,
+        timer: 1600
+      });
+
       return setStatus('Este email não está disponível');
     }
 
@@ -36,6 +45,13 @@ export default function SignUp() {
 
     users.push(newUser);
     saveOnStorage('tmh-users', users);
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: `Bem vindo ${usrname}`,
+      showConfirmButton: false,
+      timer: 1200
+    });
   };
 
   return (
@@ -74,7 +90,7 @@ export default function SignUp() {
           Cadastrar
         </button>
 
-        { status }
+        { status && <LabelAlert>{ status }</LabelAlert> }
       </SignupForm>
       <Footer />
     </>
