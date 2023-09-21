@@ -6,20 +6,20 @@ export const Bg = styled.div`
   color: #999;
   display: flex;
   flex-direction: column;
-  padding: 36px;
+  padding: ${ ({ theme }) => theme.sizes.xm };
 `;
 
 export const FooterLabel = styled.h4`
   color: white;
-  font-size: 20px;
-  padding-bottom: 12px;
-  padding-top: 12px;
+  font-size: ${ ({ theme }) => theme.sizes.m };
+  padding-bottom: ${ ({ theme }) => theme.sizes.xs };
+  padding-top: ${ ({ theme }) => theme.sizes.xs };
 `;
 
 export const FooterIcon = styled.img`
-  height: 36px;
-  max-height: 36px;
-  padding-right: 12px;
+  height: ${ ({ theme }) => theme.sizes.xm };
+  max-height: ${ ({ theme }) => theme.sizes.xm };
+  padding-right: ${ ({ theme }) => theme.sizes.xs };
 `;
 
 export const FooterHeadline = styled.div`

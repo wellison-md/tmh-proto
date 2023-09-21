@@ -1,10 +1,10 @@
 import { styled } from 'styled-components';
 
 export const NavBarWrapper = styled.ul`
-  background-color: #8500d3;
+  background-color: ${ ({ theme }) => theme.colors.primary };
   color: white;
   display: flex;
-  height: 40px;
+  height: ${ ({ theme }) => theme.sizes.m };
   justify-content: center;
   list-style: none;
   width: 100%;

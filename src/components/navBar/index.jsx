@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { ListItem, NavBarWrapper } from "./navBarStyle";
 import { useContext } from "react";
-import Store from "../../context/store";
 import { FaUserCircle } from 'react-icons/fa';
 import { getFromStorage } from "../../utils/localStorage";
+import Store from "../../context/store";
 
 export default function NavBar() {
   const { loggedUser } = useContext(Store);
