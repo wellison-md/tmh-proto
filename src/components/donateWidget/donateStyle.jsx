@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const DonateLabel = styled.h2`
   color: #fff;
-  margin: 36px 0;
+  padding: 36px 0;
 `;
 
 export const ComandBtn = styled.button`
@@ -18,6 +18,11 @@ export const ComandBtn = styled.button`
   &:hover {
     background-color: #d998ff;
   }
+
+  &:disabled {
+    background-color: grey;
+    opacity: 0.5;
+  }
 `;
 
 export const Balance = styled.h1`
@@ -30,12 +35,21 @@ export const Comand = styled.div`
 
 export const Wrapper = styled.div`
   background-color: #000;
-
-`;
+  padding-left: calc((100% - 300px) / 2);
+  `;
 
 export const DonateBtn = styled.button`
   border-radius: 8px;
   margin: 36px 0;
+  font-size: 18px;
   padding: 12px;
-  width: 300px;
+  width: 360px;
+
+  &:disabled {
+    color: white;
+  }
+`;
+
+export const DonateContainer = styled.div`
+  background-color: #000;
 `;

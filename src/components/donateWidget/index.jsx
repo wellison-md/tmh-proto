@@ -1,15 +1,48 @@
-import { Balance, Comand, ComandBtn, DonateBtn, DonateLabel, Wrapper } from "./donateStyle";
+import { useEffect, useState } from "react";
+import { Balance, Comand, ComandBtn, DonateBtn, DonateContainer, DonateLabel, Wrapper } from "./donateStyle";
+import { saveOnStorage } from "../../utils/localStorage";
+import { useNavigate } from "react-router-dom";
 
 export default function DonateWidget() {
+  const [donation, setDonation] = useState(0);
+  const navigate = useNavigate();
+
+  const decreaseValue = () => {
+    setDonation(donation - 5);
+  };
+
+  const increaseValue = () => {
+    setDonation(donation + 5);
+  };
+
+  const savePrevDonation = () => {
+    saveOnStorage('tmh-prev-donation', donation);
+    return navigate('/donate');
+  }
+
+  useEffect(() => {
+    if (donation <= 0) {
+      setDonation(0);
+    }
+  }, [donation]);
+
   return (
     <Wrapper>
-      <DonateLabel>Ajude-nos com uma doação</DonateLabel>
-      <Comand>
-        <ComandBtn>-</ComandBtn>
-        <Balance>{ '0.00' }</Balance>
-        <ComandBtn>+</ComandBtn>
-      </Comand>
-      <DonateBtn>Doar</DonateBtn>
+      <DonateContainer>
+        <DonateLabel>Ajude-nos com uma doação</DonateLabel>
+        <Comand>
+          <ComandBtn onClick={ () => decreaseValue() } disabled={ donation === 0}>-</ComandBtn>
+          <Balance>R$ { donation?.toFixed(2) }</Balance>
+          <ComandBtn onClick={ () => increaseValue() }>+</ComandBtn>
+        </Comand>
+
+        <DonateBtn
+          onClick={ () => savePrevDonation() }
+          disabled={ donation === 0}
+        >
+          Doar
+        </DonateBtn>
+      </DonateContainer>
     </Wrapper>
   );
 }
