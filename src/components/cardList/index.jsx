@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import PetCard from '../card';
 import { CardListLabel, CardListWrapper, Wrapper } from './cardListStyle';
 import { BiSolidZap } from 'react-icons/bi';
+import Spinner from '../spinner';
 
 export default function CardList(props) {
   const { petList } = props;
@@ -12,7 +13,7 @@ export default function CardList(props) {
       <CardListWrapper>
         {
           petList.length === 0
-            ? 'loading...'
+            ? <Spinner msg='Carregando...' />
             : petList.map((item) => <PetCard key={ item.id } { ...item } />)
         }
       </CardListWrapper>
