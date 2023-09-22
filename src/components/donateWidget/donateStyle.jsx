@@ -39,8 +39,7 @@ export const Wrapper = styled.div`
   background-color: #000;
   display: flex;
   flex-direction: column;
-  padding-left: calc((100% - 300px) / 2);
-  `;
+`;
 
 export const DonateBtn = styled.button`
   border-radius: ${ ({ theme }) => theme.sizes.xxs };
