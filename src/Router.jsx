@@ -8,6 +8,7 @@ import Contact from "./pages/contact";
 import Store from "./context/store";
 import UserProfile from "./pages/userProfile";
 import PetDetails from "./pages/petDetails";
+import Pets from "./pages/pets";
 
 export default function Router() {
   const { loggedUser } = useContext(Store);
@@ -19,6 +20,7 @@ export default function Router() {
         <Route path="/login" element={ <Login /> } />
         <Route path="/signup" element={ <SignUp /> } />
         <Route path="/contact" element={ <Contact /> } />
+        <Route path="/pets" element={ <Pets /> } />
         <Route path="/pet-profile/:id" element={  <PetDetails /> } />
         <Route path="*" element={  <NotFound /> } />
         {
