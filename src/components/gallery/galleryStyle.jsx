@@ -2,6 +2,9 @@ import { styled } from 'styled-components';
 
 export const MainImage = styled.img`
   max-width: 85%;
+  width: ${ ({ theme }) => parseInt(theme.sizes.xxl) * 10}px;
+  height: ${ ({ theme }) => parseInt(theme.sizes.l) * 10}px;
+  object-fit: cover;
 `;
 
 export const SectionImages = styled.section`
