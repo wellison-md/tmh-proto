@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { getFake } from "../../utils/fkdb/getFkData";
-import { useLocation } from "react-router-dom";
-import { formatAge, formatCategory, formatDateToView, formatGender } from "../../utils/formaters";
+import { useEffect, useState } from 'react';
+import { getFake } from '../../utils/fkdb/getFkData';
+import { useLocation } from 'react-router-dom';
+import { formatAge, formatCategory, formatDateToView, formatGender } from '../../utils/formaters';
 
 export default function PetProfile() {
   const [data, setData] = useState({});

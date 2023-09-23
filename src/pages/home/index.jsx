@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import { getFake } from "../../utils/fkdb/getFkData";
-import { checkInitialStorage } from "../../utils/localStorage";
-import { users } from "../../utils/fkdb/fkUsers";
-import CardList from "../../components/cardList";
-import DonateWidget from "../../components/donateWidget";
-import EventList from "../../components/eventList";
-import Footer from "../../components/footer";
-import Header from "../../components/header";
+import { useEffect, useState } from 'react';
+import { getFake } from '../../utils/fkdb/getFkData';
+import { checkInitialStorage } from '../../utils/localStorage';
+import { users } from '../../utils/fkdb/fkUsers';
+import CardList from '../../components/cardList';
+import DonateWidget from '../../components/donateWidget';
+import EventList from '../../components/eventList';
+import Footer from '../../components/footer';
+import Header from '../../components/header';
 
 checkInitialStorage('tmh-users', users);
 

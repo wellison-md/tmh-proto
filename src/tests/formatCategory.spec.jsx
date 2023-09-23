@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect } from 'vitest';
 import { formatCategory } from '../utils/formaters';
 
 describe('Format category function', () => {

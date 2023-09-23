@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import { Balance, Comand, ComandBtn, DonateBtn,
-  DonateContainer, DonateLabel, Wrapper } from "./donateStyle";
-import { saveOnStorage } from "../../utils/localStorage";
-import { useNavigate } from "react-router-dom";
+  DonateContainer, DonateLabel, Wrapper } from './donateStyle';
+import { saveOnStorage } from '../../utils/localStorage';
+import { useNavigate } from 'react-router-dom';
 import { BsArrowDownCircle, BsArrowUpCircle } from 'react-icons/bs';
 
 export default function DonateWidget() {

@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { makeLogin } from "../../utils/login";
-import { saveOnStorage } from "../../utils/localStorage";
-import { LoginForm, SignSection, Wrapper } from "./loginStyle";
-import Swal from "sweetalert2";
-import Header from "../../components/header";
+import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { makeLogin } from '../../utils/login';
+import { saveOnStorage } from '../../utils/localStorage';
+import { LoginForm, SignSection, Wrapper } from './loginStyle';
+import Swal from 'sweetalert2';
+import Header from '../../components/header';
 import Footer from '../../components/footer';
-import Store from "../../context/store";
+import Store from '../../context/store';
 
 export default function Login() {
   const [email, setEmail] = useState('');

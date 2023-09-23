@@ -1,7 +1,7 @@
-import { EVENT_LIST } from "../constants";
-import { cities } from "./fkCities";
-import { pets } from "./fkPets";
-import { users } from "./fkUsers";
+import { EVENT_LIST } from '../constants';
+import { cities } from './fkCities';
+import { pets } from './fkPets';
+import { users } from './fkUsers';
 
 export const getFake = (data) => {
   const requestTimer = 500 + Math.random() * 2000;

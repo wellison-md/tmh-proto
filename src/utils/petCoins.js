@@ -1,4 +1,4 @@
-import { CEILING_PETCOINS } from "./constants";
+import { CEILING_PETCOINS } from './constants';
 
 export const calculatePetcoins = (rescueDate = new Date()) => {
   const MILISECOND_TO_SECOND = 1000;

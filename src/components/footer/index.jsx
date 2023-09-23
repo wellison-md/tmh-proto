@@ -1,4 +1,4 @@
-import { Bg, FooterHeadline, FooterIcon, FooterLabel } from "./footerStyle";
+import { Bg, FooterHeadline, FooterIcon, FooterLabel } from './footerStyle';
 import icon from '../../assets/logo/logo-inverse.png';
 
 export default function Footer() {

@@ -1,13 +1,13 @@
-import { useContext, useEffect, useState } from "react";
-import { getFromStorage } from "../../utils/localStorage";
-import { makeLogout } from "../../utils/login";
-import { useNavigate } from "react-router-dom";
-import { LogoutBtn, UserAvatar, UserCoins, UserLabel, Wrapper } from "./userProfileStyle";
+import { useContext, useEffect, useState } from 'react';
+import { getFromStorage } from '../../utils/localStorage';
+import { makeLogout } from '../../utils/login';
+import { useNavigate } from 'react-router-dom';
+import { LogoutBtn, UserAvatar, UserCoins, UserLabel, Wrapper } from './userProfileStyle';
 import { RiCoinsLine } from 'react-icons/ri'
-import Footer from "../../components/footer";
-import Header from "../../components/header";
-import Store from "../../context/store";
-import Swal from "sweetalert2";
+import Footer from '../../components/footer';
+import Header from '../../components/header';
+import Store from '../../context/store';
+import Swal from 'sweetalert2';
 
 export default function UserProfile() {
   const { setLoggedUser } = useContext(Store);

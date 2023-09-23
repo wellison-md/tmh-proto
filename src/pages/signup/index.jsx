@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { getFromStorage, saveOnStorage } from "../../utils/localStorage";
-import { getByProps } from "../../utils/fkdb/getFkData";
+import { useState } from 'react';
+import { getFromStorage, saveOnStorage } from '../../utils/localStorage';
+import { getByProps } from '../../utils/fkdb/getFkData';
 import { USER_TEMPLATE } from '../../utils/constants';
-import { LabelAlert, SignupForm } from "./signupStyle";
-import { hash } from "bcryptjs";
-import Footer from "../../components/footer";
-import Header from "../../components/header";
-import Swal from "sweetalert2";
+import { LabelAlert, SignupForm } from './signupStyle';
+import { hash } from 'bcryptjs';
+import Footer from '../../components/footer';
+import Header from '../../components/header';
+import Swal from 'sweetalert2';
 
 export default function SignUp() {
   const [usrname, setUsrname] = useState('');

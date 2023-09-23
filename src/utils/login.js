@@ -1,6 +1,6 @@
-import { compare } from "bcryptjs";
-import { getFromStorage } from "./localStorage";
-import { getByProps } from "./fkdb/getFkData";
+import { compare } from 'bcryptjs';
+import { getFromStorage } from './localStorage';
+import { getByProps } from './fkdb/getFkData';
 
 export const makeLogin = async (email, pswd) => {
   const users = getFromStorage('tmh-users');

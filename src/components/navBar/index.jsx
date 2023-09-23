@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import { ListItem, NavBarWrapper } from "./navBarStyle";
-import { useContext, useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
+import { ListItem, NavBarWrapper } from './navBarStyle';
+import { useContext, useEffect, useState } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
-import { checkLoggedUser, getFromStorage } from "../../utils/localStorage";
-import Store from "../../context/store";
+import { checkLoggedUser, getFromStorage } from '../../utils/localStorage';
+import Store from '../../context/store';
 
 export default function NavBar() {
   const { loggedUser, setLoggedUser } = useContext(Store);

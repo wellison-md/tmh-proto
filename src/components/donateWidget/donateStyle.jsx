@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const DonateLabel = styled.h2`
   color: #fff;

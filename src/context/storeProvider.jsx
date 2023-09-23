@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-import Store from "./store";
+import Store from './store';
 
 export default function StoreProvider({ children }) {
   const [loggedUser, setLoggedUser] = useState(false);

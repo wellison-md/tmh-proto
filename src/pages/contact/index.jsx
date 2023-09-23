@@ -1,8 +1,8 @@
-import { useState } from "react";
-import Header from "../../components/header";
-import { sendWappMsg } from "../../utils/contact";
-import Footer from "../../components/footer";
-import { ContactForm } from "./contactStyle";
+import { useState } from 'react';
+import Header from '../../components/header';
+import { sendWappMsg } from '../../utils/contact';
+import Footer from '../../components/footer';
+import { ContactForm } from './contactStyle';
 
 export default function Contact() {
   const [contactName, setContactName] = useState('');

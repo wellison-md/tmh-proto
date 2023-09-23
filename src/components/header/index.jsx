@@ -1,5 +1,5 @@
-import LogoIcon from "../logoIcon";
-import NavBar from "../navBar";
+import LogoIcon from '../logoIcon';
+import NavBar from '../navBar';
 
 export default function Header() {
   return (
