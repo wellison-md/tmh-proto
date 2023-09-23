@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import { getFake } from '../../utils/fkdb/getFkData';
 import { useLocation } from 'react-router-dom';
 import { formatAge, formatCategory, formatDateToView, formatGender } from '../../utils/formaters';
+import { PetTitle } from './petProfileStyle';
+import Gallery from '../gallery';
+import Footer from '../footer';
 
 export default function PetProfile() {
   const [data, setData] = useState({});
@@ -19,15 +22,9 @@ export default function PetProfile() {
 
   return (
     <>
-      <h2>{ data.nick }</h2>
-      <img src={ data.image } alt={ data.nick } />
-      {
-        data.galery?.map((img, i) => (
-          <div key={ i }>
-            <img src={ img } alt={ `foto ${ i } de ${ data.nick } ` } />
-          </div>
-        ))
-      }
+      <PetTitle>{ data.nick }</PetTitle>
+      <Gallery galleryList={ data?.galery || [] } />
+      <h3>dados</h3>
       <ul>
         <li>Resgatado em: { formatDateToView(data.rescue_date) }</li>
         <li>Categoria: { formatCategory(data.category) }</li>
@@ -43,6 +40,7 @@ export default function PetProfile() {
             : data.vaccins?.map((vac, i) => (<li key={ i }>{ vac }</li>))
         }
       </ul>
+      <Footer />
     </>
   );
 }
