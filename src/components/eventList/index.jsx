@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
+import { EventWrapper, Image } from './eventListStyle';
 
 export default function EventList(props) {
   const { eventList } = props;
   return (
-    <>
+    <EventWrapper>
       {
         eventList.length === 0
           ? 'loading...'
-          : eventList.map((evt, i) => (<img key={ i } src={ evt } alt={ `evento-${i}` } />))
+          : eventList.map((evt, i) => (<Image key={ i } src={ evt } alt={ `evento-${i}` } />))
       }
-    </>
+    </EventWrapper>
   );
 }
 
