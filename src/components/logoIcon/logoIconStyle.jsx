@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  background-color: ${ ({ theme }) => theme.colors.primary };
   display: flex;
-  background-color: #8500d3;
   justify-content: center;
-  padding: 12px;
+  padding: ${ ({ theme }) => theme.sizes.xs };
 `;
 
 export const IconTmh = styled.img`
-  height: 50px;
-  max-height: 50px;
-  padding-right: 12px;
+  height: ${ ({ theme }) => theme.sizes.l };
+  max-height: ${ ({ theme }) => theme.sizes.l };
+  padding-right: ${ ({ theme }) => theme.sizes.xs };
+
+  @media(max-width: ${ ({ theme }) => theme.screens.xs }) {
+    display: none;
+  }
 `;
