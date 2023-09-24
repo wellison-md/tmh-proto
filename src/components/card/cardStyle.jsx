@@ -4,11 +4,11 @@ export const CardWrapper = styled.div`
   align-items: center;
   background-color: white;
   border: 1px solid lightgray;
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 ${ ({ theme }) => theme.sizes.xs } ${ ({ theme }) => theme.sizes.xs };
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  margin: 12px;
+  margin: ${ ({ theme }) => theme.sizes.xs };
   max-width: 250px;
   transition: .3s;
   width: 250px;
@@ -26,12 +26,17 @@ export const CardWrapper = styled.div`
 
   & h3 {
     color: #8500d3;
-    font-size: 24px;
-    padding-top: 8px;
+    font-size: ${ ({ theme }) => theme.sizes.m };
+    padding-top: ${ ({ theme }) => theme.sizes.xxs };
   }
 
   & p {
-    font-size: 13px;
-    padding-bottom: 12px;
+    font-size: ${ ({ theme }) => theme.sizes.xs };
+    padding-bottom: ${ ({ theme }) => theme.sizes.xs };
+  }
+
+  @media(max-width: ${ ({ theme }) => theme.screens.xs }) {
+    max-width: 45%;
+    margin: ${ ({ theme }) => theme.sizes.xxs };
   }
 `;

@@ -14,6 +14,10 @@ export const FooterLabel = styled.h4`
   font-size: ${ ({ theme }) => theme.sizes.m };
   padding-bottom: ${ ({ theme }) => theme.sizes.xs };
   padding-top: ${ ({ theme }) => theme.sizes.xs };
+
+  @media(max-width: ${ ({ theme }) => theme.screens.xs }) {
+    font-size: ${ ({ theme }) => theme.sizes.s };
+  }
 `;
 
 export const FooterIcon = styled.img`
@@ -23,5 +27,6 @@ export const FooterIcon = styled.img`
 `;
 
 export const FooterHeadline = styled.div`
+  align-items: center;
   display: flex;
 `;
