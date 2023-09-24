@@ -19,6 +19,7 @@ export const SubImage = styled.img`
   height: ${ ({ theme }) => theme.sizes.l };
   margin: 0 ${ ({ theme }) => theme.sizes.xxxs };
   max-width: ${ ({ theme }) => theme.sizes.l };
+  object-fit: cover;
   transition: 0.3s;
   width: ${ ({ theme }) => theme.sizes.l };
 
