@@ -13,4 +13,9 @@ export const Image = styled.img`
   max-width: 40%;
   padding: 1%;
   width: 45%;
+
+  @media(max-width: ${ ({ theme }) => theme.screens.xs }) {
+    max-width: 90%;
+    width: 90%;
+  }
 `;

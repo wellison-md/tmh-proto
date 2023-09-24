@@ -51,8 +51,8 @@ export const Wrapper = styled.div`
 
 export const DonateBtn = styled.button`
   border-radius: ${ ({ theme }) => theme.sizes.xxs };
-  margin: ${ ({ theme }) => theme.sizes.xm } 0;
   font-size: ${ ({ theme }) => theme.sizes.s };
+  margin: ${ ({ theme }) => theme.sizes.xm } 0;
   padding: ${ ({ theme }) => theme.sizes.xs };
   width: ${ ({ theme }) => parseInt(theme.sizes.xxm) * 10 }px;
 
