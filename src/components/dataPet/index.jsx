@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { formatAge, formatCategory, formatDateToView, formatGender } from '../../utils/formaters';
 import { CtaButton, Topic } from './dataPetStyle';
 import { FaRegCalendarAlt } from 'react-icons/fa';
-import { BiCategory, BiTime } from 'react-icons/bi';
+import { BiCategory, BiTime, BiInjection } from 'react-icons/bi';
 import { BsGenderAmbiguous } from 'react-icons/bs';
 import { PiHandHeartBold } from 'react-icons/pi';
 import { calculatePetcoins } from '../../utils/petCoins';
@@ -40,7 +40,11 @@ export default function DataPet(props) {
         {
           data.vaccins?.length === 0
             ? 'Sem informações adicionais'
-            : data.vaccins?.map((vac, i) => (<Topic key={i}>{vac}</Topic>))
+            : data.vaccins?.map((vac, i) => (
+                <Topic key={i}>
+                  <BiInjection size='24px' />
+                  <p>{vac}</p>
+                </Topic>))
         }
       </section>
 
