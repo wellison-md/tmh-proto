@@ -3,38 +3,47 @@ import styled from 'styled-components';
 export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
-  margin-left: calc((100% - 450px) / 2);
-  padding: 36px 0;
+  margin-left: calc((100% - 40%) / 2);
+  padding: ${ ({ theme}) => theme.sizes.xm } 0;
 
   input {
-    border-radius: 8px;
+    border-radius: ${ ({ theme }) => theme.sizes.xxs };
     border: 1px solid lightgray;
-    margin-top: 12px;
-    max-width: 450px;
-    padding: 12px;
+    margin-top: ${ ({ theme }) => theme.sizes.xs };
+    max-width: ${ ({ theme }) => parseInt(theme.sizes.xxxm) * 10 }px;
+    padding: ${ ({ theme }) => theme.sizes.xs };
   }
 
   button {
-    background-color: #8500d3;
-    border:none;
-    border-radius: 8px;
+    background-color: ${ ({ theme }) => theme.colors.primary };
+    border: none;
+    border-radius: ${ ({ theme }) => theme.sizes.xxs };
     color: white;
-    margin-bottom: 48px;
-    margin-top: 36px;
-    max-width: 450px;
-    padding: 12px;
+    margin-bottom: ${ ({ theme }) => theme.sizes.xxs };
+    margin-top: ${ ({ theme }) => theme.sizes.xm };
+    max-width: ${ ({ theme }) => parseInt(theme.sizes.xxxm) * 10 }px;
+    padding: ${ ({ theme }) => theme.sizes.xs };
   }
   button:disabled {
     opacity: 0.3;
   }
 
   textarea {
-    max-width: 450px;
-    max-height: 300px;
-    border-radius: 8px;
-    padding: 12px;
-    margin-top: 12px;
-    height: 150px;
     border: 1px solid lightgray;
+    border-radius: ${ ({ theme }) => theme.sizes.xxs };
+    height: 150px;
+    margin-top: ${ ({ theme }) => theme.sizes.xs };
+    max-height: 300px;
+    max-width: ${ ({ theme }) => parseInt(theme.sizes.xxxm) * 10 }px;
+    padding: ${ ({ theme }) => theme.sizes.xs };
+  }
+
+  @media(max-width: ${ ({ theme }) => theme.screens.xs }) {
+    align-items: center;
+    margin-left: 0;
+
+    input, textarea, button {
+      width: 85%;
+    }
   }
 `;
