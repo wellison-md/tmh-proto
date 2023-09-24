@@ -61,10 +61,10 @@ export default function DataPet(props) {
 
 DataPet.propTypes = {
   data: PropTypes.shape({
-    rescue_date: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    age: PropTypes.string.isRequired,
-    gender: PropTypes.string.isRequired,
-    vaccins: PropTypes.arrayOf(PropTypes.string).isRequired,
+    rescue_date: PropTypes.string,
+    category: PropTypes.string,
+    age: PropTypes.string,
+    gender: PropTypes.string,
+    vaccins: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 };
