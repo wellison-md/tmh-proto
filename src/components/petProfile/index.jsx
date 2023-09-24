@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { getFake } from '../../utils/fkdb/getFkData';
 import { useLocation } from 'react-router-dom';
-import { formatAge, formatCategory, formatDateToView, formatGender } from '../../utils/formaters';
-import { PetTitle } from './petProfileStyle';
+import { PetTitle, Aside } from './petProfileStyle';
 import Gallery from '../gallery';
 import Footer from '../footer';
+import DataPet from '../dataPet';
 
 export default function PetProfile() {
   const [data, setData] = useState({});
@@ -22,24 +22,14 @@ export default function PetProfile() {
 
   return (
     <>
-      <PetTitle>{ data.nick }</PetTitle>
-      <Gallery galleryList={ data?.galery || [] } />
-      <h3>dados</h3>
-      <ul>
-        <li>Resgatado em: { formatDateToView(data.rescue_date) }</li>
-        <li>Categoria: { formatCategory(data.category) }</li>
-        <li>Idade: { formatAge(data.age) }</li>
-        <li>Gênero: {  formatGender(data.gender) }</li>
-      </ul>
-
-      <h3>Vacinas e medicações</h3>
-      <ul>
-        {
-          data.vaccins?.length === 0
-            ? 'Sem informações adicionais'
-            : data.vaccins?.map((vac, i) => (<li key={ i }>{ vac }</li>))
-        }
-      </ul>
+      <Aside>
+        <Gallery galleryList={ data?.galery || [] } />
+        <div>
+          <PetTitle>{ data.nick }</PetTitle>
+          <h3>dados</h3>
+          <DataPet data={ data } />
+        </div>
+      </Aside>
       <Footer />
     </>
   );

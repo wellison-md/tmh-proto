@@ -3,5 +3,11 @@ import { styled } from 'styled-components';
 export const PetTitle = styled.h2`
   color: ${ ({ theme }) => theme.colors.primary };
   font-size: ${ ({ theme }) => theme.sizes.m };
-  margin: ${ ({ theme }) => theme.sizes.m } 0;
+  margin-bottom: ${ ({ theme }) => theme.sizes.m };
+`;
+
+export const Aside = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: ${ ({ theme }) => theme.sizes.xl } 0;
 `;
