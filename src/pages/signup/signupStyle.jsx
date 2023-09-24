@@ -27,11 +27,25 @@ export const SignupForm = styled.form`
   button:disabled {
     opacity: 0.3;
   }
+
+  @media(max-width: ${ ({ theme }) => theme.screens.xs }) {
+    align-items: center;
+    margin-left: 0;
+
+    input {
+      max-width: ${ ({ theme }) => parseInt(theme.sizes.xm) * 10}px;
+      width: 85%
+    }
+
+    button {
+      width: 85%;
+    }
+  }
 `;
 
 export const LabelAlert = styled.p`
   background-color: rgba(255, 0, 0, 0.5);
-  padding: ${ ({ theme }) => theme.sizes.xs };
   color: white;
   max-width: ${ ({ theme }) => parseInt(theme.sizes.xxxm) * 10}px;
+  padding: ${ ({ theme }) => theme.sizes.xs };
 `;

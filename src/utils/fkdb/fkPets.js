@@ -101,7 +101,7 @@ export const pets = [
   },
   {
     id: 7,
-    nick: 'Cookie negresco',
+    nick: 'Cookie',
     category: 'dog',
     gender: 'male',
     age: '2.3yo',
@@ -137,7 +137,7 @@ export const pets = [
     vaccins: [
       'castration',
       'vaccin1',
-      'vaccin8,'
+      'vaccin8',
     ]
   },
   {

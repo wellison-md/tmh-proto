@@ -14,6 +14,7 @@ export const FooterLabel = styled.h4`
   font-size: ${ ({ theme }) => theme.sizes.m };
   padding-bottom: ${ ({ theme }) => theme.sizes.xs };
   padding-top: ${ ({ theme }) => theme.sizes.xs };
+  text-align: center;
 
   @media(max-width: ${ ({ theme }) => theme.screens.xs }) {
     font-size: ${ ({ theme }) => theme.sizes.s };
