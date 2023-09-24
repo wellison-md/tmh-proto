@@ -10,4 +10,9 @@ export const Aside = styled.div`
   display: flex;
   justify-content: center;
   margin: ${ ({ theme }) => theme.sizes.xl } 0;
+
+  @media(max-width: ${ ({ theme }) => theme.screens.xs }) {
+    align-items: center;
+    flex-direction: column;
+  }
 `;

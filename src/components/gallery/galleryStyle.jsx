@@ -5,6 +5,10 @@ export const MainImage = styled.img`
   width: ${ ({ theme }) => parseInt(theme.sizes.xxl) * 10}px;
   height: ${ ({ theme }) => parseInt(theme.sizes.l) * 10}px;
   object-fit: cover;
+
+  @media(max-width: ${ ({ theme }) => theme.screens.xs }) {
+    max-width: 100%;
+  }
 `;
 
 export const SectionImages = styled.section`
