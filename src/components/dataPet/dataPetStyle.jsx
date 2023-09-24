@@ -2,9 +2,9 @@ import { styled } from 'styled-components';
 
 export const Topic = styled.div`
   align-items: center;
-  display: flex;
   border: 1px solid lightgrey;
   border-radius: ${ ({ theme }) => theme.sizes.xxs };
+  display: flex;
   margin: ${ ({ theme }) => theme.sizes.xxs } 0 ;
   padding: ${ ({ theme }) => theme.sizes.xxs } ${ ({ theme }) => theme.sizes.m };
 
@@ -14,11 +14,18 @@ export const Topic = styled.div`
 `;
 
 export const CtaButton = styled.button`
-  border: none;
-  background-color: ${ ({ theme }) => theme.colors.primary };
-  color: white;
-  border-radius: ${ ({ theme }) => theme.sizes.xxs };
-  display: flex;
   align-items: center;
+  background-color: ${ ({ theme }) => theme.colors.primary };
+  border: none;
+  border-radius: ${ ({ theme }) => theme.sizes.xxs };
+  color: white;
+  display: flex;
+  font-size: ${ ({ theme }) => theme.sizes.s };
+  margin: ${ ({ theme }) => theme.sizes.m } 0;
   padding: ${ ({ theme }) => theme.sizes.xxs } ${ ({ theme }) => theme.sizes.m };
+  transition: 0.3s;
+
+  &:hover {
+    background-color: ${ ({ theme }) => theme.colors.comp2 };
+  }
 `;

@@ -5,7 +5,7 @@ import { CtaButton, Topic } from './dataPetStyle';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import { BiCategory, BiTime, BiInjection } from 'react-icons/bi';
 import { BsGenderAmbiguous } from 'react-icons/bs';
-import { PiHandHeartBold } from 'react-icons/pi';
+import { PiHandHeartBold, PiWarningCircleBold } from 'react-icons/pi';
 import { calculatePetcoins } from '../../utils/petCoins';
 
 export default function DataPet(props) {
@@ -39,7 +39,10 @@ export default function DataPet(props) {
       <section>
         {
           data.vaccins?.length === 0
-            ? 'Sem informações adicionais'
+            ? <Topic>
+                <PiWarningCircleBold size='24px' />
+                <p>Sem informações adicionais</p>
+            </Topic>
             : data.vaccins?.map((vac, i) => (
                 <Topic key={i}>
                   <BiInjection size='24px' />
@@ -50,7 +53,7 @@ export default function DataPet(props) {
 
         <CtaButton>
           <PiHandHeartBold size='24px' />
-          <p>Adotar por { calculatePetcoins(data?.rescue_date)} petcoins</p>
+          <p>Adotar por { calculatePetcoins(data?.rescue_date) } petcoins</p>
         </CtaButton>
     </>
   );
