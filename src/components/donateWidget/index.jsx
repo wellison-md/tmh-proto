@@ -46,12 +46,14 @@ export default function DonateWidget() {
           </ComandBtn>
         </Comand>
 
-        <DonateBtn
-          onClick={ () => savePrevDonation() }
-          disabled={ donation === 0}
-        >
-          Doar
-        </DonateBtn>
+        <Comand>
+          <DonateBtn
+            onClick={ () => savePrevDonation() }
+            disabled={ donation === 0}
+          >
+            Doar
+          </DonateBtn>
+        </Comand>
       </DonateContainer>
     </Wrapper>
   );

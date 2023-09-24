@@ -24,6 +24,10 @@ export const ComandBtn = styled.button`
     background-color: grey;
     opacity: 0.5;
   }
+
+  @media(max-width: ${ ({ theme }) => theme.screens.xs }) {
+    padding: ${ ({ theme }) => theme.sizes.xxs }; ${ ({ theme }) => theme.sizes.s };
+  }
 `;
 
 export const Balance = styled.h1`
@@ -32,6 +36,10 @@ export const Balance = styled.h1`
 
 export const Comand = styled.div`
   display: flex;
+
+  @media(max-width: ${ ({ theme }) => theme.screens.xs }) {
+    justify-content: center;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -51,6 +59,10 @@ export const DonateBtn = styled.button`
   &:disabled {
     color: white;
     opacity: 0.5;
+  }
+
+  @media(max-width: ${ ({ theme }) => theme.screens.xs }) {
+    max-width: ${ ({ theme }) => parseInt(theme.sizes.m) * 10 }px;
   }
 `;
 
