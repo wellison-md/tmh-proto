@@ -5,9 +5,25 @@ import Store from './store';
 export default function StoreProvider({ children }) {
   const [loggedUser, setLoggedUser] = useState(false);
 
+  const [pets, setPets] = useState([]);
+  const [date, setDate] = useState('');
+  const [category, setCategory] = useState([]);
+  const [age, setAge] = useState(0);
+  const [gender, setGender] = useState('');
+
   const INITIAL_STATE = {
     loggedUser,
     setLoggedUser,
+    pets,
+    setPets,
+    date,
+    setDate,
+    category,
+    setCategory,
+    age,
+    setAge,
+    gender,
+    setGender,
   };
 
 
