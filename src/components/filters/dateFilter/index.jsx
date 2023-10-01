@@ -1,34 +1,45 @@
-import { useContext, useState } from 'react';
-import Store from '../../../context/store';
+import { useState } from 'react';
 import { FilterSection } from './dateFilterStyle';
 import { VscError } from 'react-icons/vsc';
 
 export default function DateFilter() {
-  const { date, setDate } = useContext(Store);
-  const [isActive, setIsActive] = useState(false);
+  const [initialDate, setInitialDate] = useState('');
+  const [finalDate, setFinalDate] = useState('');
 
-  const handleFilter = (e) => {
-    setIsActive(true);
-    setDate(e.target.value);
+
+  const handleInitialFilter = (e) => {
+    setInitialDate(e.target.value);
   };
 
-  const resetFilter = () => {
-    setIsActive(false);
-    setDate('');
+  const handleFinalFilter = (e) => {
+    setFinalDate(e.target.value);
   };
 
   return (
     <FilterSection>
       <h2>Data </h2>
-      <p>filtre pela data de resgate</p>
       <span>
+        <p>Data inicial</p>
         <input
           type='date'
-          value={ date }
-          onChange={ (e) => handleFilter(e) }
+          value={ initialDate }
+          onChange={ (e) => handleInitialFilter(e) }
         />
 
-        <button onClick={ () => resetFilter() } disabled={ !isActive }>
+        <button onClick={ () => setInitialDate('') } disabled={ initialDate === '' }>
+          <VscError />
+        </button>
+      </span>
+
+      <span>
+        <p>Data final</p>
+        <input
+          type='date'
+          value={ finalDate }
+          onChange={ (e) => handleFinalFilter(e) }
+        />
+
+        <button onClick={ () => setFinalDate('') } disabled={ finalDate === '' }>
           <VscError />
         </button>
       </span>
