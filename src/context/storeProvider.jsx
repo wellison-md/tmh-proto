@@ -1,30 +1,22 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import Store from './store';
+import { pets } from '../utils/fkdb/fkPets';
 
 export default function StoreProvider({ children }) {
   const [loggedUser, setLoggedUser] = useState(false);
 
-  const [pets, setPets] = useState([]);
-  const [date, setDate] = useState('');
-  const [category, setCategory] = useState([]);
-  const [age, setAge] = useState(0);
-  const [gender, setGender] = useState('');
+  const [defaultPets, setDefaultPets] = useState(pets);
+  const [filterPets, setFilterPets] = useState(pets);
 
-  const INITIAL_STATE = {
+  const INITIAL_STATE = useMemo(() => ({
     loggedUser,
     setLoggedUser,
-    pets,
-    setPets,
-    date,
-    setDate,
-    category,
-    setCategory,
-    age,
-    setAge,
-    gender,
-    setGender,
-  };
+    defaultPets,
+    setDefaultPets,
+    filterPets,
+    setFilterPets,
+  }), [defaultPets, filterPets, loggedUser]);
 
 
   return (
