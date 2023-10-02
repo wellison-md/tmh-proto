@@ -5,6 +5,7 @@ import { PetTitle, Aside } from './petProfileStyle';
 import Gallery from '../gallery';
 import Footer from '../footer';
 import DataPet from '../dataPet';
+import { upPage } from '../../utils/dvs';
 
 export default function PetProfile() {
   const [data, setData] = useState({});
@@ -14,6 +15,7 @@ export default function PetProfile() {
 
   useEffect(() => {
     (async () => {
+      upPage();
       const petList = await getFake('pets');
       const pet = petList.find((pett) => pett.id === Number(id));
       setData(pet);

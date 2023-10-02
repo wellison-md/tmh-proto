@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { getFromStorage, saveOnStorage } from '../../utils/localStorage';
+import { useContext, useState } from 'react';
+import { checkLoggedUser, getFromStorage, saveOnStorage } from '../../utils/localStorage';
 import { getByProps } from '../../utils/fkdb/getFkData';
 import { USER_TEMPLATE } from '../../utils/constants';
 import { LabelAlert, SignupForm } from './signupStyle';
@@ -7,12 +7,14 @@ import { hash } from 'bcryptjs';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Swal from 'sweetalert2';
+import Store from '../../context/store';
 
 export default function SignUp() {
   const [usrname, setUsrname] = useState('');
   const [email, setEmail] = useState('');
   const [pswd, setPswd] = useState('');
   const [status, setStatus] = useState('');
+  const { setLoggedUser } = useContext(Store);
 
   const isActive = usrname.length >= 3
     && email.length >= 6
@@ -40,11 +42,15 @@ export default function SignUp() {
       id: users.length + 1,
       email,
       usrname,
+      avatar: `https://randomuser.me/api/portraits/lego/${Math.floor(Math.random() * 8)}.jpg`,
       pswd: await hash(pswd, 10),
     };
 
     users.push(newUser);
     saveOnStorage('tmh-users', users);
+    saveOnStorage('tmh-logged-user', newUser);
+    setLoggedUser(checkLoggedUser());
+
     Swal.fire({
       position: 'center',
       icon: 'success',

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import PetCard from '../card';
-import { CardListLabel, CardListWrapper, Wrapper } from './cardListStyle';
-import { BiSolidZap } from 'react-icons/bi';
+import { CardListWrapper, Wrapper } from './cardListStyle';
 import Spinner from '../spinner';
 
 export default function CardList(props) {
@@ -9,7 +8,6 @@ export default function CardList(props) {
 
   return (
     <Wrapper>
-      <CardListLabel><BiSolidZap /> Resgatados recentemente</CardListLabel>
       <CardListWrapper>
         {
           petList.length === 0
